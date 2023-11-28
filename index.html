@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <title>Firestore App</title>
+</head>
+<body>
+  <header>
+    <h1>Starbucks</h1>
+    <button id="signInGoogleBtn">Sign In with Google</button>
+    <button id="signInFacebookBtn">Sign In with Facebook</button>
+    <button id="viewProfilesBtn">Ver Perfiles</button>
+    <button id="signoutBtn">Sign Out</button>
+  </header>
+
+  <main>
+    <section id="authSection">
+      <!-- Aquí se mostrará el estado de autenticación (logueado/no logueado) -->
+    </section>
+
+    <section id="crudSection">
+      <h2>Formulario</h2>
+
+      <!-- Formulario para agregar entidad -->
+      <form id="addForm">
+        <label for="nameField">Nombre:</label>
+        <input type="text" id="nameField" required>
+      
+        <label for="ageField">Edad:</label>
+        <input type="number" id="ageField" required>
+      
+        <label for="dateField">Fecha de Nacimiento:</label>
+        <input type="date" id="dateField" required>
+      
+        <label for="nationalityField">Nacionalidad:</label>
+        <input type="text" id="nationalityField" required>
+      
+        <label for="educationLevelField">Nivel de Estudios:</label>
+        <select id="educationLevelField" required>
+          <option value="Primaria">Primaria</option>
+          <option value="Secundaria">Secundaria</option>
+          <option value="Preparatoria">Preparatoria</option>
+          <option value="Universidad">Universidad</option>
+          <option value="Posgrado">Posgrado</option>
+        </select>
+      
+        <button type="submit">Agregar</button>
+      </form>
+
+      <!-- Lista de entidades existentes -->
+      <ul id="entityList">
+        <!-- Las entidades se mostrarán aquí -->
+      </ul>
+
+      <!-- Formulario para eliminar entidad -->
+      <form id="deleteForm">
+        <label for="deleteId">ID de la entidad a eliminar:</label>
+        <input type="text" id="deleteId" required>
+        <button type="submit">Eliminar</button>
+      </form>
+
+      <!-- Formulario para actualizar entidad -->
+      <form id="updateForm">
+  <label for="updateId">ID de la entidad a actualizar:</label>
+  <input type="text" id="updateId" required>
+
+  <label for="updateNameField">Nuevo Nombre:</label>
+  <input type="text" id="updateNameField" required>
+
+  <label for="updateAgeField">Nueva Edad:</label>
+  <input type="number" id="updateAgeField" required>
+
+  <label for="updateDateField">Nueva Fecha de Nacimiento:</label>
+  <input type="date" id="updateDateField" required>
+
+  <label for="updateNationalityField">Nueva Nacionalidad:</label>
+  <input type="text" id="updateNationalityField" required>
+
+  <label for="updateEducationLevelField">Nuevo Nivel de Estudios:</label>
+  <select id="updateEducationLevelField" required>
+    <option value="Primaria">Primaria</option>
+    <option value="Secundaria">Secundaria</option>
+    <option value="Preparatoria">Preparatoria</option>
+    <option value="Universidad">Universidad</option>
+    <option value="Posgrado">Posgrado</option>
+  </select>
+
+  <button type="submit">Actualizar</button>
+</form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Angel Santiago</p>
+  </footer>
+ 
+
+  <script>
+    // Lógica para el botón de ver perfiles
+    const viewProfilesBtn = document.getElementById("viewProfilesBtn");
+
+    viewProfilesBtn.addEventListener("click", () => {
+      window.location.href = "profiles.html";
+    });
+  </script>
+</body>
+</html>

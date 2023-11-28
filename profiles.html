@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="profiles.js"></script>
+  <title>Firestore App - Perfiles</title>
+</head>
+<body>
+  <header>
+    <h1>Perfiles</h1>
+    <button id="goBackBtn">Regresar</button>
+  </header>
+
+  <main>
+    <section id="profileList">
+      <!-- Los perfiles se mostrarán aquí -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Angel Santiago</p>
+  </footer>
+
+  <script>
+    // Lógica para el botón de regresar
+    const goBackBtn = document.getElementById("goBackBtn");
+
+    goBackBtn.addEventListener("click", () => {
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

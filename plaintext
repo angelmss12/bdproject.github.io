@@ -1,0 +1,10 @@
+- /your-project
+  - /public
+    - index.html
+    - style.css
+    - app.js
+  - /src
+    - firebase-config.js
+  - /functions
+    - index.js
+  - README.md
