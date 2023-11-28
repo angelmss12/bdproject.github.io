@@ -9,9 +9,9 @@ const firebaseConfig = {
   measurementId: "G-QSY4FVZT73"
 };
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 // Observador de autenticación
 auth.onAuthStateChanged((user) => {
